@@ -34,7 +34,7 @@ func main() {
 	app.Listen(4000)
 }
 
-// GetEnv GetEnv
+// GetEnv getEnv
 func GetEnv() map[string]string {
 	result := make(map[string]string)
 
@@ -50,7 +50,7 @@ func GetEnv() map[string]string {
 	return result
 }
 
-// GetPodEnv GetPodEnv
+// GetPodEnv getPodEnv
 func GetPodEnv() map[string]string {
 	env := os.Environ()
 
