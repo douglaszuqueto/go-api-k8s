@@ -15,6 +15,12 @@ func main() {
 
 	app.Use(logger.New())
 
+	app.Get("/", func(c *fiber.Ctx) {
+		result := GetEnv()
+
+		c.JSON(result)
+	})
+
 	app.Get("/ping", func(c *fiber.Ctx) {
 		c.Send("pong")
 	})
