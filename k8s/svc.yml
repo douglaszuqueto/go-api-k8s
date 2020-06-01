@@ -1,3 +1,6 @@
+# 
+# Versão especifica
+# 
 kind: Service
 apiVersion: v1
 metadata:
@@ -17,7 +20,9 @@ spec:
   type: LoadBalancer
 
 ---
-
+# 
+# Versão 1
+# 
 kind: Service
 apiVersion: v1
 metadata:
@@ -37,7 +42,9 @@ spec:
   type: LoadBalancer
       
 ---
-
+# 
+# Versão 2
+# 
 kind: Service
 apiVersion: v1
 metadata:
