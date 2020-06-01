@@ -5,7 +5,6 @@ metadata:
   namespace: default
   labels:
     k8s-app: go-api-k8s
-    version: v2
 spec:
   ports:
     - name: tcp-5000-4000
@@ -16,4 +15,43 @@ spec:
     k8s-app: go-api-k8s
     version: v2
   type: LoadBalancer
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: go-api-k8s-v1
+  namespace: default
+  labels:
+    k8s-app: go-api-k8s
+spec:
+  ports:
+    - name: tcp-5000-4000
+      protocol: TCP
+      port: 6000
+      targetPort: 4000
+  selector:
+    k8s-app: go-api-k8s
+    version: v1
+  type: LoadBalancer
       
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: go-api-k8s-v2
+  namespace: default
+  labels:
+    k8s-app: go-api-k8s
+spec:
+  ports:
+    - name: tcp-5000-4000
+      protocol: TCP
+      port: 7000
+      targetPort: 4000
+  selector:
+    k8s-app: go-api-k8s
+    version: v2
+  type: LoadBalancer

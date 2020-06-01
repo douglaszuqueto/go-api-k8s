@@ -1,25 +1,29 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: go-api-k8s
+  name: go-api-k8s-v2
   labels:
     k8s-app: go-api-k8s
-    version: v1
+    version: v2
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       k8s-app: go-api-k8s
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
   template:
     metadata:
-      name: go-api-k8s
+      name: go-api-k8s-v2
       labels:
         k8s-app: go-api-k8s
-        version: v1
+        version: v2
     spec:
       containers:
-        - name: go-api-k8s
-          image: douglaszuqueto/go-api-k8s
+        - name: go-api-k8s-v2
+          image: douglaszuqueto/go-api-k8s:v2.0.0
           imagePullPolicy: Always
           env:
             - name: NODE_NAME
