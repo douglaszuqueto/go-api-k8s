@@ -8,7 +8,7 @@ import (
 	"github.com/gofiber/logger"
 )
 
-const version = "v1.0.0"
+var version string
 
 func main() {
 	app := fiber.New()

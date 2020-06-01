@@ -7,8 +7,9 @@ RUN go mod download
 
 # BUILDER
 FROM base as builder
+ARG version
 COPY . .
-RUN CGO_ENABLED=0 go build -ldflags "${XFLAGS} -s -w" -a -o api ./main.go
+RUN CGO_ENABLED=0 go build -ldflags "${XFLAGS} -s -w -X main.version=${version}" -a -o api ./main.go
 
 # UPX
 FROM douglaszuqueto/alpine-upx as upx
