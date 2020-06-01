@@ -6,6 +6,26 @@ API em Go para utilização em laboratório de estudos K8S
 
 * Fiber
 
+## Docker Hub
+
+https://hub.docker.com/repository/docker/douglaszuqueto/go-api-k8s
+
+### Tags
+
+Tags disponiveis para testes:
+
+* latest
+* v1.0.0
+* v1.0.1
+* v2.0.0
+* v2.0.1
+
+```bash
+docker pull docker pull douglaszuqueto/go-api-k8s:latest
+docker pull docker pull douglaszuqueto/go-api-k8s:v1.0.0
+docker pull docker pull douglaszuqueto/go-api-k8s:v2.0.0
+```
+
 ## Endpoints
 
 * Ping
