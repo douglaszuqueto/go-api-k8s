@@ -46,12 +46,10 @@ func GetEnv() map[string]string {
 
 	nodeName := os.Getenv("NODE_NAME")
 	podName := os.Getenv("POD_NAME")
-	hostname, _ := os.Hostname()
 
 	result["API_VERSION"] = version
 	result["NODE_NAME"] = nodeName
 	result["POD_NAME"] = podName
-	result["HOSTNAME"] = hostname
 
 	return result
 }
